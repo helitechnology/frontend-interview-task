@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 
 const Header: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const savedDarkMode = localStorage.getItem("darkMode");
+    return savedDarkMode === "true";
+  });
 
   useEffect(() => {
     if (isDarkMode) {
