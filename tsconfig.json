@@ -1,7 +1,19 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext", // Allows the use of ES module syntax
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react-jsx", // Set to "react" for React 16 and below, or "react-jsx" for React 17+
+    "moduleResolution": "node",
+    "esModuleInterop": true, // Enables interoperability between CommonJS and ES modules
+    "skipLibCheck": true, // Optional
+    "types": ["jest", "@testing-library/jest-dom", "@testing-library/react"] // Add Jest types,
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "jest.setup.ts", // Ensure this file is included
+    "__tests__/PostCard.test.tsx"
+  ],
+  "exclude": ["node_modules"]
 }
